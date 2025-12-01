@@ -63,7 +63,7 @@
             margin: 0 auto;
             padding: 40px 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
@@ -73,7 +73,6 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .product-card:hover {
@@ -81,16 +80,23 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .product-image {
+        .product-image-container {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #f5d5cb 0%, #e8b5a8 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
+            height: 350px;
+            overflow: hidden;
             position: relative;
+            background: #f0f0f0;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image-container img {
+            transform: scale(1.05);
         }
 
         .new-badge {
@@ -104,6 +110,7 @@
             font-size: 12px;
             font-weight: bold;
             font-family: Arial, sans-serif;
+            z-index: 10;
         }
 
         .product-info {
@@ -113,22 +120,15 @@
         .product-name {
             font-size: 22px;
             color: #8b5a3c;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: bold;
         }
 
         .product-description {
             font-size: 14px;
             color: #666;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .product-price {
-            font-size: 24px;
-            color: #ff6b9d;
-            font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         .vinted-button {
@@ -194,6 +194,10 @@
             .products {
                 grid-template-columns: 1fr;
             }
+
+            .product-image-container {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -210,68 +214,69 @@
 
     <section class="products">
         <div class="product-card">
-            <div class="product-image">
-                <span class="new-badge">NUOVO</span>
-                👜
-            </div>
+            <a href="https://www.vinted.it/items/7592380735-borsa-a-tracolla-bianco-panna-lavorata-a-maglia-con-dettagli-in-perle-e-catena-dorata" target="_blank">
+                <div class="product-image-container">
+                    <span class="new-badge">NUOVO</span>
+                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=400&fit=crop" alt="Borsa a tracolla bianco panna">
+                </div>
+            </a>
             <div class="product-info">
-                <div class="product-name">Borsa Nera Elegante</div>
-                <div class="product-description">Borsa a mano in maglia grossa con catena dorata. Perfetta per ogni occasione elegante.</div>
-                <div class="product-price">€45,00</div>
-                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+                <div class="product-name">Borsa a Tracolla Bianco Panna</div>
+                <div class="product-description">La borsa a tracolla in un elegante bianco panna è un accessorio delicato e raffinato. È lavorata a maglia, con dettagli in perle che aggiungono un tocco di lusso, mentre la catena dorata conferisce un'eleganza senza tempo.</div>
+                <a href="https://www.vinted.it/items/7592380735-borsa-a-tracolla-bianco-panna-lavorata-a-maglia-con-dettagli-in-perle-e-catena-dorata" target="_blank" class="vinted-button">Vedi su Vinted</a>
             </div>
         </div>
 
         <div class="product-card">
-            <div class="product-image">👝</div>
+            <a href="https://www.vinted.it/items/7592509344" target="_blank">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=400&fit=crop" alt="Borsa nera con dettagli oro">
+                </div>
+            </a>
             <div class="product-info">
-                <div class="product-name">Borsa Verde Natura</div>
-                <div class="product-description">Borsa pratica con manici resistenti. Tonalità verde bosco con dettagli beige.</div>
-                <div class="product-price">€38,00</div>
-                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+                <div class="product-name">Borsa Nera con Dettagli Oro</div>
+                <div class="product-description">Questa borsa nera è un must-have per ogni occasione. I dettagli dorati la rendono sofisticata, ideale per eventi formali o per aggiungere un tocco di classe al tuo outfit quotidiano. La sua versatilità e il design senza tempo la rendono un accessorio imprescindibile.</div>
+                <a href="https://www.vinted.it/items/7592509344" target="_blank" class="vinted-button">Vedi su Vinted</a>
             </div>
         </div>
 
         <div class="product-card">
-            <div class="product-image">
-                <span class="new-badge">NUOVO</span>
-                🎒
-            </div>
+            <a href="https://www.vinted.it/items/7637196197" target="_blank">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&h=400&fit=crop" alt="Borsa elegante in grigio scuro">
+                </div>
+            </a>
             <div class="product-info">
-                <div class="product-name">Borsa Azzurra Pastello</div>
-                <div class="product-description">Borsa tote in azzurro delicato. Design moderno e versatile per tutti i giorni.</div>
-                <div class="product-price">€42,00</div>
-                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">💼</div>
-            <div class="product-info">
-                <div class="product-name">Borsa Rosa Romantica</div>
-                <div class="product-description">Borsa compatta in rosa antico. Ideale per outfit romantici e femminili.</div>
-                <div class="product-price">€40,00</div>
-                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+                <div class="product-name">Borsa Elegante in Grigio Scuro</div>
+                <div class="product-description">Borsa in grigio scuro, elegante e versatile. Perfetta per ogni occasione, la sua tonalità neutra si abbina facilmente a vari outfit. Il design sofisticato e la qualità dei materiali la rendono un accessorio di alta classe.</div>
+                <a href="https://www.vinted.it/items/7637196197" target="_blank" class="vinted-button">Vedi su Vinted</a>
             </div>
         </div>
 
         <div class="product-card">
-            <div class="product-image">🛍️</div>
+            <a href="https://www.vinted.it/items/7592414946-borsa-grigio-scuro-in-simil-velluto-elegante-e-morbidissima" target="_blank">
+                <div class="product-image-container">
+                    <span class="new-badge">NUOVO</span>
+                    <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=400&fit=crop" alt="Borsa grigio scuro in simil velluto">
+                </div>
+            </a>
             <div class="product-info">
-                <div class="product-name">Borsa Beige Classica</div>
-                <div class="product-description">Borsa shopper spaziosa in beige naturale. Perfetta per shopping e tempo libero.</div>
-                <div class="product-price">€35,00</div>
-                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+                <div class="product-name">Borsa Grigio Scuro in Simil Velluto</div>
+                <div class="product-description">Questa borsa grigio scuro in simil velluto è incredibilmente morbida al tatto. Il suo design elegante è ideale per le serate più raffinate. Un accessorio che non solo completa il tuo outfit ma ti fa sentire anche super elegante e comoda.</div>
+                <a href="https://www.vinted.it/items/7592414946-borsa-grigio-scuro-in-simil-velluto-elegante-e-morbidissima" target="_blank" class="vinted-button">Vedi su Vinted</a>
             </div>
         </div>
 
         <div class="product-card">
-            <div class="product-image">👛</div>
+            <a href="https://www.vinted.it/items/7655047616" target="_blank">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&h=400&fit=crop" alt="Borsa a tracolla con stampa animalier">
+                </div>
+            </a>
             <div class="product-info">
-                <div class="product-name">Borsa Marrone Vintage</div>
-                <div class="product-description">Borsa a tracolla con catena. Stile vintage con lavorazione a maglia intrecciata.</div>
-                <div class="product-price">€48,00</div>
-                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+                <div class="product-name">Borsa a Tracolla con Stampa Animalier</div>
+                <div class="product-description">La borsa a tracolla con stampa animalier è perfetta per chi cerca un mix di tendenze e praticità. La stampa unica e audace, unita alla praticità della tracolla, rende questa borsa un pezzo distintivo per un look audace e alla moda.</div>
+                <a href="https://www.vinted.it/items/7655047616" target="_blank" class="vinted-button">Vedi su Vinted</a>
             </div>
         </div>
     </section>
