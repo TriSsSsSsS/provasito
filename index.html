@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cappello Vintage</title>
+    <title>Giulia Handmade - Borse Artigianali</title>
     <style>
         * {
             margin: 0;
@@ -12,172 +12,279 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            font-family: 'Georgia', serif;
+            background-color: #fef8f3;
+            color: #4a4a4a;
         }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 50px 40px;
-            max-width: 500px;
+        header {
+            background: linear-gradient(135deg, #f5d5cb 0%, #e8b5a8 100%);
+            padding: 40px 20px;
             text-align: center;
-            animation: fadeIn 0.6s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .logo {
+            font-size: 48px;
+            color: #8b5a3c;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            color: #333;
-            font-size: 28px;
+        .tagline {
+            font-size: 20px;
+            color: #6b4423;
+            font-style: italic;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(245, 213, 203, 0.3));
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            color: #8b5a3c;
             margin-bottom: 15px;
-            font-weight: 600;
         }
 
-        .subtitle {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 35px;
+        .hero p {
+            font-size: 18px;
+            color: #6b4423;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
         }
 
-        .image-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
+        .products {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        .hat-image {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
+        .product-card {
+            background: white;
             border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .hat-image:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .badge {
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f5d5cb 0%, #e8b5a8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+        }
+
+        .new-badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: #ff6b6b;
+            background: #ff6b9d;
             color: white;
-            padding: 8px 15px;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+            font-family: Arial, sans-serif;
         }
 
-        .cta-button {
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-name {
+            font-size: 22px;
+            color: #8b5a3c;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #ff6b9d;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .vinted-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #09b1ba 0%, #00838f 100%);
             color: white;
             text-decoration: none;
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            font-family: Arial, sans-serif;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+        .vinted-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(9, 177, 186, 0.4);
         }
 
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .feature {
+        .about {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffeee5 100%);
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .feature-icon {
-            font-size: 30px;
-            margin-bottom: 8px;
+        .about h3 {
+            font-size: 32px;
+            color: #8b5a3c;
+            margin-bottom: 20px;
         }
 
-        .feature-text {
-            color: #666;
-            font-size: 14px;
+        .about p {
+            font-size: 18px;
+            color: #6b4423;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
+        footer {
+            background: #8b5a3c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 36px;
             }
 
-            h1 {
-                font-size: 24px;
+            .hero h2 {
+                font-size: 26px;
             }
 
-            .hat-image {
-                max-width: 280px;
+            .products {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎩 Cappello Vintage Unico</h1>
-        <p class="subtitle">Stile autentico, qualità superiore</p>
-        
-        <a href="https://www.vinted.it/items/3903716130-cappello-strappato-denim-jeans-vintage" target="_blank">
-            <div class="image-container">
-                <span class="badge">IN VENDITA</span>
-                <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=500&h=400&fit=crop" 
-                     alt="Cappello Vintage Denim" 
-                     class="hat-image">
-            </div>
-        </a>
+    <header>
+        <div class="logo">🧶 Giulia Handmade</div>
+        <div class="tagline">Borse Artigianali Fatte con Amore</div>
+    </header>
 
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">✨</div>
-                <div class="feature-text">Vintage<br>Autentico</div>
+    <section class="hero">
+        <h2>Creazioni Uniche, Fatte a Mano</h2>
+        <p>Ogni borsa è un pezzo unico, realizzato con passione e materiali di qualità. Scopri la collezione e trova la tua borsa perfetta!</p>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <div class="product-image">
+                <span class="new-badge">NUOVO</span>
+                👜
             </div>
-            <div class="feature">
-                <div class="feature-icon">👌</div>
-                <div class="feature-text">Qualità<br>Garantita</div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🚚</div>
-                <div class="feature-text">Spedizione<br>Veloce</div>
+            <div class="product-info">
+                <div class="product-name">Borsa Nera Elegante</div>
+                <div class="product-description">Borsa a mano in maglia grossa con catena dorata. Perfetta per ogni occasione elegante.</div>
+                <div class="product-price">€45,00</div>
+                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
             </div>
         </div>
 
-        <a href="https://www.vinted.it/items/3903716130-cappello-strappato-denim-jeans-vintage" 
-           target="_blank" 
-           class="cta-button">
-           Acquista su Vinted
-        </a>
-    </div>
+        <div class="product-card">
+            <div class="product-image">👝</div>
+            <div class="product-info">
+                <div class="product-name">Borsa Verde Natura</div>
+                <div class="product-description">Borsa pratica con manici resistenti. Tonalità verde bosco con dettagli beige.</div>
+                <div class="product-price">€38,00</div>
+                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <span class="new-badge">NUOVO</span>
+                🎒
+            </div>
+            <div class="product-info">
+                <div class="product-name">Borsa Azzurra Pastello</div>
+                <div class="product-description">Borsa tote in azzurro delicato. Design moderno e versatile per tutti i giorni.</div>
+                <div class="product-price">€42,00</div>
+                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">💼</div>
+            <div class="product-info">
+                <div class="product-name">Borsa Rosa Romantica</div>
+                <div class="product-description">Borsa compatta in rosa antico. Ideale per outfit romantici e femminili.</div>
+                <div class="product-price">€40,00</div>
+                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🛍️</div>
+            <div class="product-info">
+                <div class="product-name">Borsa Beige Classica</div>
+                <div class="product-description">Borsa shopper spaziosa in beige naturale. Perfetta per shopping e tempo libero.</div>
+                <div class="product-price">€35,00</div>
+                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">👛</div>
+            <div class="product-info">
+                <div class="product-name">Borsa Marrone Vintage</div>
+                <div class="product-description">Borsa a tracolla con catena. Stile vintage con lavorazione a maglia intrecciata.</div>
+                <div class="product-price">€48,00</div>
+                <a href="https://www.vinted.it" target="_blank" class="vinted-button">Vedi su Vinted</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h3>Chi Sono</h3>
+        <p>Ciao! Sono Giulia e creo borse artigianali uniche con passione e dedizione. Ogni pezzo è realizzato a mano con filati di alta qualità, combinando tecniche tradizionali e design contemporaneo. Le mie creazioni sono pensate per durare nel tempo e accompagnarti in ogni momento della tua giornata. ✨</p>
+    </section>
+
+    <footer>
+        <div class="contact-info">📧 Contattami per informazioni o ordini personalizzati</div>
+        <div class="contact-info">📍 Creazioni artigianali italiane</div>
+        <p style="margin-top: 20px; font-size: 14px;">© 2024 Giulia Handmade - Tutti i diritti riservati</p>
+    </footer>
 </body>
 </html>
