@@ -22,6 +22,7 @@
             padding: 40px 20px;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .logo {
@@ -40,7 +41,7 @@
 
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 60px 20px 40px;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(245, 213, 203, 0.3));
         }
 
@@ -58,6 +59,37 @@
             line-height: 1.6;
         }
 
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-btn {
+            background: white;
+            border: 2px solid #e8b5a8;
+            color: #8b5a3c;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #f5d5cb 0%, #e8b5a8 100%);
+            color: #6b4423;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(232, 181, 168, 0.4);
+        }
+
         .products {
             max-width: 1200px;
             margin: 0 auto;
@@ -73,6 +105,10 @@
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+        }
+
+        .product-card.hidden {
+            display: none;
         }
 
         .product-card:hover {
@@ -106,6 +142,20 @@
             background: #ff6b9d;
             color: white;
             padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            z-index: 10;
+        }
+
+        .material-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(139, 90, 60, 0.9);
+            color: white;
+            padding: 8px 15px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
@@ -212,73 +262,15 @@
         <p>Ogni borsa è un pezzo unico, realizzato con passione e materiali di qualità. Scopri la collezione e trova la tua borsa perfetta!</p>
     </section>
 
-    <section class="products">
-        <div class="product-card">
-            <a href="https://www.vinted.it/items/7592380735-borsa-a-tracolla-bianco-panna-lavorata-a-maglia-con-dettagli-in-perle-e-catena-dorata" target="_blank">
-                <div class="product-image-container">
-                    <span class="new-badge">NUOVO</span>
-                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=400&fit=crop" alt="Borsa a tracolla bianco panna">
-                </div>
-            </a>
-            <div class="product-info">
-                <div class="product-name">Borsa a Tracolla Bianco Panna</div>
-                <div class="product-description">La borsa a tracolla in un elegante bianco panna è un accessorio delicato e raffinato. È lavorata a maglia, con dettagli in perle che aggiungono un tocco di lusso, mentre la catena dorata conferisce un'eleganza senza tempo.</div>
-                <a href="https://www.vinted.it/items/7592380735-borsa-a-tracolla-bianco-panna-lavorata-a-maglia-con-dettagli-in-perle-e-catena-dorata" target="_blank" class="vinted-button">Vedi su Vinted</a>
-            </div>
-        </div>
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterProducts('tutte')">Tutte le Borse</button>
+        <button class="filter-btn" onclick="filterProducts('cotone')">Cotone</button>
+        <button class="filter-btn" onclick="filterProducts('similpelle')">Similpelle</button>
+        <button class="filter-btn" onclick="filterProducts('scamosciata')">Scamosciata</button>
+    </div>
 
-        <div class="product-card">
-            <a href="https://www.vinted.it/items/7592509344" target="_blank">
-                <div class="product-image-container">
-                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=400&fit=crop" alt="Borsa nera con dettagli oro">
-                </div>
-            </a>
-            <div class="product-info">
-                <div class="product-name">Borsa Nera con Dettagli Oro</div>
-                <div class="product-description">Questa borsa nera è un must-have per ogni occasione. I dettagli dorati la rendono sofisticata, ideale per eventi formali o per aggiungere un tocco di classe al tuo outfit quotidiano. La sua versatilità e il design senza tempo la rendono un accessorio imprescindibile.</div>
-                <a href="https://www.vinted.it/items/7592509344" target="_blank" class="vinted-button">Vedi su Vinted</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <a href="https://www.vinted.it/items/7637196197" target="_blank">
-                <div class="product-image-container">
-                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&h=400&fit=crop" alt="Borsa elegante in grigio scuro">
-                </div>
-            </a>
-            <div class="product-info">
-                <div class="product-name">Borsa Elegante in Grigio Scuro</div>
-                <div class="product-description">Borsa in grigio scuro, elegante e versatile. Perfetta per ogni occasione, la sua tonalità neutra si abbina facilmente a vari outfit. Il design sofisticato e la qualità dei materiali la rendono un accessorio di alta classe.</div>
-                <a href="https://www.vinted.it/items/7637196197" target="_blank" class="vinted-button">Vedi su Vinted</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <a href="https://www.vinted.it/items/7592414946-borsa-grigio-scuro-in-simil-velluto-elegante-e-morbidissima" target="_blank">
-                <div class="product-image-container">
-                    <span class="new-badge">NUOVO</span>
-                    <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=400&fit=crop" alt="Borsa grigio scuro in simil velluto">
-                </div>
-            </a>
-            <div class="product-info">
-                <div class="product-name">Borsa Grigio Scuro in Simil Velluto</div>
-                <div class="product-description">Questa borsa grigio scuro in simil velluto è incredibilmente morbida al tatto. Il suo design elegante è ideale per le serate più raffinate. Un accessorio che non solo completa il tuo outfit ma ti fa sentire anche super elegante e comoda.</div>
-                <a href="https://www.vinted.it/items/7592414946-borsa-grigio-scuro-in-simil-velluto-elegante-e-morbidissima" target="_blank" class="vinted-button">Vedi su Vinted</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <a href="https://www.vinted.it/items/7655047616" target="_blank">
-                <div class="product-image-container">
-                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&h=400&fit=crop" alt="Borsa a tracolla con stampa animalier">
-                </div>
-            </a>
-            <div class="product-info">
-                <div class="product-name">Borsa a Tracolla con Stampa Animalier</div>
-                <div class="product-description">La borsa a tracolla con stampa animalier è perfetta per chi cerca un mix di tendenze e praticità. La stampa unica e audace, unita alla praticità della tracolla, rende questa borsa un pezzo distintivo per un look audace e alla moda.</div>
-                <a href="https://www.vinted.it/items/7655047616" target="_blank" class="vinted-button">Vedi su Vinted</a>
-            </div>
-        </div>
+    <section class="products" id="productsContainer">
+        <!-- Products will be loaded here by JavaScript -->
     </section>
 
     <section class="about">
@@ -289,7 +281,109 @@
     <footer>
         <div class="contact-info">📧 Contattami per informazioni o ordini personalizzati</div>
         <div class="contact-info">📍 Creazioni artigianali italiane</div>
-        <p style="margin-top: 20px; font-size: 14px;">© 2025 Giulia Handmade - Tutti i diritti riservati</p>
+        <p style="margin-top: 20px; font-size: 14px;">© 2024 Giulia Handmade - Tutti i diritti riservati</p>
     </footer>
+
+    <script>
+        const productsData = {
+            bag1: {
+                name: "Borsa a Tracolla Bianco Panna",
+                description: "La borsa a tracolla in un elegante bianco panna è un accessorio delicato e raffinato. È lavorata a maglia, con dettagli in perle che aggiungono un tocco di lusso, mentre la catena dorata conferisce un'eleganza senza tempo.",
+                image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=400&fit=crop",
+                link: "https://www.vinted.it/items/7592380735-borsa-a-tracolla-bianco-panna-lavorata-a-maglia-con-dettagli-in-perle-e-catena-dorata",
+                material: "cotone",
+                isNew: true,
+                visible: true
+            },
+            bag2: {
+                name: "Borsa Nera con Dettagli Oro",
+                description: "Questa borsa nera è un must-have per ogni occasione. I dettagli dorati la rendono sofisticata, ideale per eventi formali o per aggiungere un tocco di classe al tuo outfit quotidiano.",
+                image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=400&fit=crop",
+                link: "https://www.vinted.it/items/7592509344",
+                material: "cotone",
+                isNew: false,
+                visible: true
+            },
+            bag3: {
+                name: "Borsa Elegante in Grigio Scuro",
+                description: "Borsa in grigio scuro, elegante e versatile. Perfetta per ogni occasione, la sua tonalità neutra si abbina facilmente a vari outfit.",
+                image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&h=400&fit=crop",
+                link: "https://www.vinted.it/items/7637196197",
+                material: "similpelle",
+                isNew: false,
+                visible: true
+            },
+            bag4: {
+                name: "Borsa Grigio Scuro in Simil Velluto",
+                description: "Questa borsa grigio scuro in simil velluto è incredibilmente morbida al tatto. Il suo design elegante è ideale per le serate più raffinate.",
+                image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500&h=400&fit=crop",
+                link: "https://www.vinted.it/items/7592414946-borsa-grigio-scuro-in-simil-velluto-elegante-e-morbidissima",
+                material: "scamosciata",
+                isNew: true,
+                visible: true
+            },
+            bag5: {
+                name: "Borsa a Tracolla con Stampa Animalier",
+                description: "La borsa a tracolla con stampa animalier è perfetta per chi cerca un mix di tendenze e praticità. La stampa unica e audace rende questa borsa un pezzo distintivo.",
+                image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&h=400&fit=crop",
+                link: "https://www.vinted.it/items/7655047616",
+                material: "similpelle",
+                isNew: false,
+                visible: true
+            }
+        };
+
+        let currentFilter = 'tutte';
+
+        function loadProducts() {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = '';
+
+            Object.keys(productsData).forEach(id => {
+                const product = productsData[id];
+                if (!product.visible) return;
+
+                if (currentFilter !== 'tutte' && product.material !== currentFilter) return;
+
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <a href="${product.link}" target="_blank">
+                        <div class="product-image-container">
+                            ${product.isNew ? '<span class="new-badge">NUOVO</span>' : ''}
+                            <span class="material-badge">${getMaterialLabel(product.material)}</span>
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-description">${product.description}</div>
+                        <a href="${product.link}" target="_blank" class="vinted-button">Vedi su Vinted</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function getMaterialLabel(material) {
+            const labels = {
+                'cotone': '🧶 Cotone',
+                'similpelle': '✨ Similpelle',
+                'scamosciata': '🌟 Scamosciata'
+            };
+            return labels[material] || material;
+        }
+
+        function filterProducts(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            loadProducts();
+        }
+
+        loadProducts();
+    </script>
 </body>
 </html>
