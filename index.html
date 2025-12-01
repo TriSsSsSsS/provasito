@@ -5,41 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cappello Vintage</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            padding: 20px;
         }
+
         .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px 40px;
+            max-width: 500px;
             text-align: center;
+            animation: fadeIn 0.6s ease;
         }
-        img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        img:hover {
-            transform: scale(1.05);
-        }
+
         h1 {
             color: #333;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .hat-image {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hat-image:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .feature-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .hat-image {
+                max-width: 280px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>🎩 Cappello Vintage Unico</h1>
+        <p class="subtitle">Stile autentico, qualità superiore</p>
+        
+        <a href="https://www.vinted.it/items/3903716130-cappello-strappato-denim-jeans-vintage" target="_blank">
+            <div class="image-container">
+                <span class="badge">IN VENDITA</span>
+                <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=500&h=400&fit=crop" 
+                     alt="Cappello Vintage Denim" 
+                     class="hat-image">
+            </div>
+        </a>
 
-<div class="container">
-    <h1>Clicca sul cappello per acquistarlo su Vinted!</h1>
-    <a href="https://www.vinted.it/items/3903716130-cappello-strappato-denim-jeans-vintage" target="_blank">
-        <img src="https://via.placeholder.com/300x200.png?text=Cappello+Vintage" alt="Cappello Vintage">
-    </a>
-</div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">✨</div>
+                <div class="feature-text">Vintage<br>Autentico</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👌</div>
+                <div class="feature-text">Qualità<br>Garantita</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <div class="feature-text">Spedizione<br>Veloce</div>
+            </div>
+        </div>
 
+        <a href="https://www.vinted.it/items/3903716130-cappello-strappato-denim-jeans-vintage" 
+           target="_blank" 
+           class="cta-button">
+           Acquista su Vinted
+        </a>
+    </div>
 </body>
 </html>
